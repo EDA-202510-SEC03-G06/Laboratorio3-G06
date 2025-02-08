@@ -22,3 +22,39 @@ def is_present(my_list, element, cmp_function):
         if keyexist:
             return keypos
     return -1
+
+
+def add_first(my_list, element):
+    #Agrega un elemento al inicio de la lista.
+    #Inserta el elemento al inicio de la lista y actualiza el tamaño de la lista en 1.
+     my_list['elements'] = [element] + my_list['elements']
+     my_list['size'] += 1 
+     return my_list
+ 
+ 
+def add_last(my_list, element):
+    #Agrega un elemento al final de la lista.
+    #Inserta el elemento al final de la lista y aumenta el tamaño de la lista en 1.
+    
+     my_list['elements'].append(element)
+     my_list['size'] += 1
+     return my_list
+ 
+ 
+def size(my_list):
+    #Retorna el tamaño de la lista.
+    
+     return my_list['size']
+
+
+def first_element(my_list):
+    #Retorna el primer elemento de una lista no vacía.
+    #Retorna el primer elemento de la lista. Si la lista está vacía, lanza un error index out of range.
+    # Esta función no elimina el elemento de la lista.
+    
+    if my_list['size'] == 0:
+        return "IndexError: list index out of range"
+    return my_list['elements'][0]
+
+
+ 

@@ -28,3 +28,46 @@ def is_present(my_list, element, cmp_function):
     if not is_in_array:
         count = -1
     return count
+
+def add_first(my_list, element):
+    #Agrega un elemento al inicio de la lista.
+    #Agrega un nuevo nodo al inicio de la lista y aumenta el tamaño de la lista en 1.
+    #En caso de que la lista esté vacía, el primer y último nodo de la lista serán el nuevo nodo.
+    new_node = {'info': element, 'next': my_list['first']}
+    
+    if my_list['size'] == 0:
+        my_list['last'] = new_node
+    
+    my_list['first'] = new_node
+    my_list['size'] += 1
+    
+    return my_list
+
+def add_last(my_list, element):
+    #Agrega un elemento al final de la lista.
+    #Agrega un nuevo nodo al final de la lista y aumenta el tamaño de la lista en 1.
+    #En caso de que la lista esté vacía, el primer y último nodo de la lista serán el nuevo nodo.
+    new_node = {'info': element, 'next': None}
+    
+    if my_list['size'] == 0:
+        my_list['first'] = new_node
+    else:
+        my_list['last']['next'] = new_node
+    
+    my_list['last'] = new_node
+    my_list['size'] += 1
+    
+    return my_list
+
+def size(my_list):
+    #Retorna el tamaño de la lista.
+     return my_list['size']
+ 
+def firs_element(my_list):
+    #Retorna el primer elemento de una lista no vacía.
+    #Retorna el primer elemento de la lista. Si la lista está vacía, lanza un error IndexError: list index out of range. 
+    # Esta función no elimina el elemento de la lista.
+    
+    if my_list['size'] == 0:
+        raise Exception('IndexError: list index out of range')
+    return my_list['first']['info']
