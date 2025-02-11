@@ -73,7 +73,7 @@ def load_data(catalog):
     # TODO Complete la carga de los tags
     tags = load_tags(catalog)
     # TODO Complete la carga de los book_tags
-    book_tags = load_book_tags(catalog)
+    book_tags = load_books_tags(catalog)
     # TODO Añada
     return books, authors, tags, book_tags
     # pass
@@ -172,7 +172,7 @@ def count_books_by_tag(catalog, tag):
     for book in catalog.get("books", []):
         if "tags" in book and tag in book["tags"]:
             contador += 1
-    return Contador
+    return contador
         
 
 # Funciones para agregar informacion al catalogo
